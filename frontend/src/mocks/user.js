@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class UserAPI {
-  async getUserDetails(userId) {
+  async getUserDetails( ) {
     try {
       const token = JSON.parse(localStorage.getItem("userInfo")).token;
 
@@ -11,7 +11,7 @@ class UserAPI {
         },
       };
 
-      const { data } = await axios.get(`/api/users/${userId}`, config);
+      const { data } = await axios.get(`/api/users/`, config);
       return data;
     } catch (error) {
       throw error.response && error.response.data.detail

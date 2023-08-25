@@ -124,7 +124,7 @@ export const login = (email, password) => async (dispatch) => {
 export const fetchUserDetails = (userId) => async (dispatch) => {
   try {
     dispatch(getUserDetailsStart());
-    const userDetails = await userAPI.getUserDetails(userId);
+    const userDetails = await userAPI.getUserDetails( );
     dispatch(getUserDetailsSuccess(userDetails));
   } catch (error) {
     dispatch(getUserDetailsFailure(error.message));
@@ -136,7 +136,7 @@ export const createUser = (name, email, password) => async (dispatch) => {
     dispatch(createUserStart());
     const user = await userAPI.createUser(name, email, password);
     dispatch(createUserSuccess(user));
-    dispatch(loginSuccess(user)); // You can dispatch the loginSuccess action as well if needed
+    dispatch(loginSuccess(user));  
   } catch (error) {
     dispatch(createUserFailure(error.message));
   }
@@ -165,7 +165,6 @@ export const deleteUser = (userId) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   dispatch(userSlice.actions.logoutSuccess());
-  // Additional logout logic if needed
 };
 export const { reducer } = userSlice;
 export default userSlice;

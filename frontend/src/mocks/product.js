@@ -17,8 +17,6 @@ class ProductAPI {
     }
   }
   
-  
-
   async getProductDetails(productId) {
     try {
       const { data } = await axios.get(`/api/products/${productId}`);

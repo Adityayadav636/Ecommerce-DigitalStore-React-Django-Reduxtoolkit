@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import productAPI from '../../mocks/product';
 
-const initialState = {
-  productList: { products: [], loading: false, error: null },
+const initialState = {   
+  productList: { products: [], loading: false, error: null, page: 0, pages: 0 },
   productDetails: { product: { reviews: [] }, loading: false, error: null },
   createReview: { loading: false, error: null, success: false },
   topRatedProducts: { products: [], loading: false, error: null },

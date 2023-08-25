@@ -63,11 +63,11 @@ function ProductScreen({ match, history }) {
       ) : (
         <div>
           <Row>
-            <Col md={6}>
+            <Col md={3}>
               <Image src={product.image} alt={product.name} fluid />
             </Col>
 
-            <Col md={3}>
+            <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
@@ -153,7 +153,7 @@ function ProductScreen({ match, history }) {
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
                     <strong>{review.name}</strong>
-                    <Rating value={review.rating} />
+                    <Rating color={"#f8e825"} value={review.rating} />
                     <p>{review.createdAt.substring(0, 10)}</p>
                     <p>{review.comment}</p>
                   </ListGroup.Item>
